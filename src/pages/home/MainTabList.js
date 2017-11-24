@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {ScrollTabView, UltimateListView} from '../../components';
+import {ScrollTabView} from '../../components';
 import {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {Colors} from '../../themes';
+import DatingPage from './DatingPage';
 
 
 export default class MainTabList extends Component {
@@ -22,20 +23,9 @@ export default class MainTabList extends Component {
             <ScrollTabView
                 renderTabBar={props => <ScrollableTabBar/>}>
                 {this.state.tabs.map((tab, index) => {
-                    return <UltimateListView
-                        key={`activity${index}`}
+                    return <DatingPage
                         tabLabel={tab.name}
-                        keyExtractor={(item, index) => `${index}list`}
-                        displayDate
-                        arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-                        refreshableMode="advanced"
-                        onFetch={this.onFetch}
-                        separator={() => <View style={{
-                            height: 1,
-                            backgroundColor: Colors._ECE, width: '100%'
-                        }}/>}
-                        item={this.renderItem}
-                    />
+                        key={`page${index}`}/>
                 })}
 
             </ScrollTabView>
@@ -43,21 +33,5 @@ export default class MainTabList extends Component {
         </View>
     }
 
-    renderItem = (item, index) => {
-        return <View style={{height: 100, width: '100%', backgroundColor: 'white'}}>
-            <Text>{item}</Text>
-        </View>
 
-    };
-
-    onFetch = (page, post, end) => {
-        try {
-            if (page === 1) {
-                post([1, 2, 3, 4, 5, 6], 6)
-            }
-
-        } catch (e) {
-            end();
-        }
-    }
 }

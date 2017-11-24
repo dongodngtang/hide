@@ -21,6 +21,7 @@ export class TabNav extends Component {
         return (<View style={styles.tabView}>
             {list.map((item, num) => {
                 return <TouchableOpacity
+                    key={`nav${num}`}
                     onPress={() => this.selectTab(num)}
                     style={styles.btnTab}>
                     <Icon
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     },
     txtSelected: {
         color: Colors._blue,
-        fontSize: 13,
+        fontSize: 12,
         marginTop: 3
     }
 });

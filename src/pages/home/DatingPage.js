@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import {UltimateListView} from '../../components';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import {UltimateListView, FastImage} from '../../components';
 import {Colors} from '../../themes';
 
 export default class DatingPage extends Component {
@@ -22,8 +22,12 @@ export default class DatingPage extends Component {
     }
 
     renderItem = (item, index) => {
-        return <View style={{height: 100, width: '100%', backgroundColor: 'white'}}>
-            <Text>{item}</Text>
+        return <View style={styles.itemView}>
+            <FastImage
+                style={styles.imgAction}
+                resizeMode={FastImage.resizeMode.cover}
+                source={{uri: 'http://c1.zdb.io/files/recommend/2017/11/13/c/c20da9ee2cb8484b7888f23fc9ce0c95.jpg'}}
+            />
         </View>
 
     };
@@ -39,3 +43,18 @@ export default class DatingPage extends Component {
         }
     }
 }
+
+const styles = StyleSheet.create({
+    itemView: {
+        height: 150,
+        width: '100%',
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    imgAction: {
+        height: 130,
+        width: 200
+    }
+
+});

@@ -21,7 +21,14 @@ export default class MainTabList extends Component {
     render() {
         return <View style={{flex: 1}}>
             <ScrollTabView
-                renderTabBar={props => <ScrollableTabBar/>}>
+                renderTabBar={props => <ScrollableTabBar
+                    backgroundColor={Colors.white}
+                    activeTextColor="#F34A4A"
+                    inactiveTextColor={Colors._444}
+                    textStyle={{fontSize: 15}}
+                    style={{height: 44, backgroundColor: 'white'}}
+                    underlineStyle={{backgroundColor: '#F34A4A', height: 2}}
+                />}>
                 {this.state.tabs.map((tab, index) => {
                     return <DatingPage
                         tabLabel={tab.name}

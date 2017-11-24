@@ -9,7 +9,8 @@ const colors = {
     _CCC: '#CCCCCC',
     _ECE: '#ECECEE',
     _000: '#000000',
-    _444: '#444444'
+    _444: '#444444',
+    _blue: 'green'
 };
 
 export default colors

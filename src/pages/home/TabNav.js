@@ -24,7 +24,7 @@ export class TabNav extends Component {
                     onPress={() => this.selectTab(num)}
                     style={styles.btnTab}>
                     <Icon
-                        color={index === num ? 'green' : Colors._444}
+                        color={index === num ? Colors._blue : Colors._444}
                         name={item.icon}
                         size={18}/>
                     <Text style={index === num ? styles.txtSelected : styles.txtSelect}>{item.name}</Text>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         marginTop: 3
     },
     txtSelected: {
-        color: 'green',
+        color: Colors._blue,
         fontSize: 13,
         marginTop: 3
     }

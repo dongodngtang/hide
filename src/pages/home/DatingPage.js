@@ -1,24 +1,33 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import {UltimateListView, FastImage, Icon} from '../../components';
 import {Colors} from '../../themes';
+import MainBanner from './MainBanner';
+import DatFilter from './DatFilter';
 
 export default class DatingPage extends Component {
 
 
     render() {
-        return <UltimateListView
-            keyExtractor={(item, index) => `${index}list`}
-            displayDate
-            arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-            refreshableMode="advanced"
-            onFetch={this.onFetch}
-            separator={() => <View style={{
-                height: 1,
-                backgroundColor: Colors._ECE, width: '100%'
-            }}/>}
-            item={this.renderItem}
-        />
+        return <ScrollView>
+            <View style={{flex: 1}}>
+                <MainBanner/>
+                <DatFilter/>
+
+                <UltimateListView
+                    keyExtractor={(item, index) => `${index}list`}
+                    displayDate
+                    arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
+                    refreshableMode="advanced"
+                    onFetch={this.onFetch}
+                    separator={() => <View style={{
+                        height: 1,
+                        backgroundColor: Colors._ECE, width: '100%'
+                    }}/>}
+                    item={this.renderItem}
+                />
+            </View>
+        </ScrollView>
     }
 
     renderItem = (item, index) => {
@@ -52,7 +61,7 @@ export default class DatingPage extends Component {
                     <Icon
                         color={Colors._label}
                         style={{marginRight: 5}}
-                        name={'calendar-check-o'}
+                        name={'calendar-o'}
                         size={14}/>
 
                     <Text

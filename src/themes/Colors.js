@@ -10,7 +10,10 @@ const colors = {
     _ECE: '#ECECEE',
     _000: '#000000',
     _444: '#444444',
-    _blue: 'green'
+    _blue: 'green',
+    _title: '#9B9B9B',
+    _label: '#9C9C9C',
+    _tag: '#FF6A00'
 };
 
 export default colors

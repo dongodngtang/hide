@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Scene, Stack, Tabs} from 'react-native-router-flux';
 import MainPage from './MainPage';
+import {Icon} from '../../components';
+import {Colors} from '../../themes';
 
 export class TabNav extends Component {
 
@@ -9,14 +11,23 @@ export class TabNav extends Component {
 
         const {index} = this.props.navigationState;
 
-        let list = ['首页', '发现', '消息', '我的'];
+        let list = [{
+            name: '首页',
+            icon: 'home'
+        }, {name: '发现', icon: 'bandcamp'},
+            {name: '消息', icon: 'commenting-o'},
+            {name: '我的', icon: 'user-o'}];
 
         return (<View style={styles.tabView}>
             {list.map((item, num) => {
                 return <TouchableOpacity
                     onPress={() => this.selectTab(num)}
                     style={styles.btnTab}>
-                    <Text style={index === num ? styles.txtSelected : styles.txtSelect}>{item}</Text>
+                    <Icon
+                        color={index === num ? 'green' : Colors._444}
+                        name={item.icon}
+                        size={18}/>
+                    <Text style={index === num ? styles.txtSelected : styles.txtSelect}>{item.name}</Text>
 
                 </TouchableOpacity>
             })}
@@ -97,13 +108,16 @@ const styles = StyleSheet.create({
     btnTab: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'blue'
+        justifyContent: 'center'
     },
     txtSelect: {
-        color: 'green'
+        color: Colors._444,
+        fontSize: 12,
+        marginTop: 3
     },
     txtSelected: {
-        color: 'red'
+        color: 'green',
+        fontSize: 13,
+        marginTop: 3
     }
 });

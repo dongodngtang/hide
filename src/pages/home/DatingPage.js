@@ -62,12 +62,17 @@ export default class DatingPage extends Component {
                 </View>
 
                 <View style={[styles.alignRow, {marginTop: 8}]}>
-                    <Text style={styles.txtJoin}>12/16</Text>
+                    <Text style={styles.txtJoin}>报名中</Text>
 
 
                 </View>
 
 
+            </View>
+
+            <View style={styles.tag}>
+                <Text style={styles.txtTag}>#徒步</Text>
+                <Text style={styles.txtTag}>#山野</Text>
             </View>
 
             <FastImage
@@ -118,10 +123,8 @@ const styles = StyleSheet.create({
     },
     txtTag: {
         fontSize: 12,
-        color: Colors._title,
-        backgroundColor: Colors._ECE,
-        borderRadius: 3,
-        padding: 3
+        color: 'green',
+        marginRight: 10
     },
     txtJoin: {
         borderRadius: 3,
@@ -140,6 +143,12 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 5,
         right: 10
+    },
+    tag: {
+        position: 'absolute',
+        bottom: 3,
+        left: 10,
+        flexDirection: 'row'
     }
 
 

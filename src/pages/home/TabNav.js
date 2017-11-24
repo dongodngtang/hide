@@ -49,7 +49,6 @@ export const TagPage = () => {
             <Scene
                 key="tab_home"
                 component={MainPage}
-                hideTabBar
 
             />
         </Stack>

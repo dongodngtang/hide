@@ -9,7 +9,6 @@ export default class DatFilter extends Component {
         return <View style={styles.page}>
             <View style={styles.tab}>
                 <Icon
-                    color={Colors._tag}
                     size={16}
                     name={'calendar-check-o'}/>
 
@@ -18,7 +17,6 @@ export default class DatFilter extends Component {
             </View>
             <View style={styles.tab}>
                 <Icon
-                    color={Colors._tag}
                     size={16}
                     name={'globe'}/>
 
@@ -27,7 +25,6 @@ export default class DatFilter extends Component {
             </View>
             <View style={styles.tab}>
                 <Icon
-                    color={Colors._tag}
                     size={16}
                     name={'filter'}/>
 
@@ -36,7 +33,6 @@ export default class DatFilter extends Component {
             </View>
             <View style={styles.tab}>
                 <Icon
-                    color={Colors._tag}
                     size={16}
                     name={'user-plus'}/>
 
@@ -58,12 +54,14 @@ const styles = StyleSheet.create({
     page: {
         height: 50,
         flexDirection: 'row',
-        backgroundColor: Colors._ECE,
-        width: '100%'
+        backgroundColor: 'white',
+        width: '100%',
+        borderBottomColor: Colors._ECE,
+        borderBottomWidth: 1
     },
     txt: {
         fontSize: 15,
-        color: Colors._tag,
+        color: Colors._444,
         marginTop: 8
     }
 

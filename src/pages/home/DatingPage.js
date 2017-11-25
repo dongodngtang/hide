@@ -94,9 +94,14 @@ export default class DatingPage extends Component {
     };
 
     onFetch = (page, post, end) => {
+        console.log(page)
         try {
+
             if (page === 1) {
-                post([1, 2, 3, 4, 5, 6], 6)
+                setTimeout(() => {
+                    post([1, 2, 3, 4, 5, 6], 6)
+                }, 2000)
+
             }
 
         } catch (e) {

@@ -1,21 +1,75 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Modal} from 'react-native';
 import {RkText, RkTextInput} from 'react-native-ui-kitten';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import NavBar, {NavButton, NavButtonText, NavTitle} from 'react-native-nav';
+import cityData from '../../utils/1488442890071.json';
+import CityListView from '../../components/cityPicker/cityList';
 
 export default class TopNavMain extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            currentCity: '',
+            showCityListView: false
+        };
+
+        let citys = {};
+        let chars = [];
+        cityData.map(char => {
+            chars = [...chars, char.char];
+            citys[char.char] = char.citys.map(city => {
+                return {
+                    ...city,
+                    pinyin: city.pinyin.join('')
+                }
+            });
+        });
+        this.chars = chars;
+        this.citys = citys;
+    }
+
+    choosedCityHandler = (city) => {
+        console.log(city);
+        this.setState({
+            showCityListView: false,
+            currentCity: city.area_name
+        });
+    }
+
+    gobackHandler = () => {
+        this.setState({
+            showCityListView: false
+        });
+    }
+
+    onPressButtonHandler = () => {
+        this.setState({
+            showCityListView: true
+        });
+    }
+
     render() {
+
+        const {currentCity, showCityListView} = this.state;
+        this.CityListView = this.CityListView || <CityListView
+            citys={this.citys}
+            chars={this.chars}
+            gobackHandler={this.gobackHandler}
+            choosedCity={this.choosedCityHandler}
+        />;
+
         return <NavBar>
             <NavButton
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center'
                 }}
-                onPress={() => alert('hi')}>
+                onPress={this.onPressButtonHandler}>
                 <NavButtonText
                     style={styles.txtLocation}>
-                    {"深圳"}
+                    {currentCity || '选择城市'}
                 </NavButtonText>
                 <Icon style={{
                     marginLeft: 4
@@ -35,6 +89,16 @@ export default class TopNavMain extends Component {
                     name={'qrcode'}
                     size={20}/>
             </NavButton>
+
+            <Modal
+                visible={this.state.showCityListView}
+                animationType='slide'
+                onRequestClose={() => {
+                    alert("Modal has been closed.")
+                }}
+            >
+                {this.CityListView}
+            </Modal>
         </NavBar>
     }
 }

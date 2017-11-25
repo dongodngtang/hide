@@ -4,6 +4,8 @@ import {UltimateListView, UltimateRefreshView} from 'react-native-ultimate-listv
 import ScrollTabView from 'react-native-scrollable-tab-view';
 import FastImage from 'react-native-fast-image';
 import Swiper from 'react-native-swiper';
+import NavTopBar from './NavTopBar';
+import WebViewPage from './WebViewPage';
 
 export {
     Container,
@@ -12,5 +14,7 @@ export {
     UltimateListView,
     UltimateRefreshView,
     FastImage,
-    Swiper
+    Swiper,
+    NavTopBar,
+    WebViewPage
 }

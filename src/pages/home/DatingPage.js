@@ -9,26 +9,27 @@ export default class DatingPage extends Component {
 
 
     render() {
-        return <ScrollView>
-            <View style={{flex: 1}}>
-                <MainBanner/>
-                <DatFilter/>
-
-                <UltimateListView
-                    keyExtractor={(item, index) => `${index}list`}
-                    displayDate
-                    arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-                    refreshableMode="advanced"
-                    onFetch={this.onFetch}
-                    separator={() => <View style={{
-                        height: 1,
-                        backgroundColor: Colors._ECE, width: '100%'
-                    }}/>}
-                    item={this.renderItem}
-                />
-            </View>
-        </ScrollView>
+        return <UltimateListView
+            header={() => this.renderHeader()}
+            keyExtractor={(item, index) => `${index}list`}
+            displayDate
+            arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
+            refreshableMode="advanced"
+            onFetch={this.onFetch}
+            separator={() => <View style={{
+                height: 1,
+                backgroundColor: Colors._ECE, width: '100%'
+            }}/>}
+            item={this.renderItem}
+        />
     }
+
+    renderHeader = () => {
+        return <View>
+            <MainBanner/>
+            <DatFilter/>
+        </View>
+    };
 
     renderItem = (item, index) => {
         return <View style={styles.itemView}>

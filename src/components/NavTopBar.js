@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import NavBar, {NavButton, NavButtonText, NavTitle} from 'react-native-nav';
 import PropTypes from 'prop-types';
 
-export default class NavBar extends Component {
+export default class NavTopBar extends Component {
 
     static propTypes = {
         title: PropTypes.string,
@@ -22,8 +22,7 @@ export default class NavBar extends Component {
                 <Icon
                     name={'chevron-left'}
                     size={16}/>
-                <NavButtonText
-                    style={styles.txtLocation}>
+                <NavButtonText>
                     {'返回'}
                 </NavButtonText>
             </NavButton>

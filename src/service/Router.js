@@ -1,7 +1,6 @@
 import {Actions} from 'react-native-router-flux';
 
 
-
 export default class Router {
 
     push(props, route) {
@@ -17,5 +16,9 @@ export default class Router {
     pop() {
         Actions.pop();
 
+    }
+
+    toWebViewPage(url) {
+        this.push({name: 'WebViewPage', params: {url: url}})
     }
 }

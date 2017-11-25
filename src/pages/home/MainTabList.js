@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {ScrollTabView} from '../../components';
+import {ScrollTabView, WebViewPage} from '../../components';
 import {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {Colors} from '../../themes';
 import DatingPage from './DatingPage';
@@ -29,13 +29,41 @@ export default class MainTabList extends Component {
                     style={{height: 44, backgroundColor: 'white'}}
                     underlineStyle={{backgroundColor: '#F34A4A', height: 2}}
                 />}>
-                {this.state.tabs.map((tab, index) => {
-                    return <DatingPage
-                        tabLabel={tab.name}
-                        key={`page${index}`}/>
-                })}
+                {
+                    this.state.tabs.map((tab, index) => {
+
+                        switch (index) {
+                            case 0:
+                                return <DatingPage
+                                    tabLabel={tab.name}
+                                    key={`page${index}`}/>;
+
+                            case 1:
+                                return <WebViewPage
+                                    key={`page${index}`}
+                                    hideNav={true}
+                                    tabLabel={tab.name}
+                                    url={'https://mp.weixin.qq.com/s/9N_JehE1pyy7hLzFoVolHw'}/>;
+                            default:
+                                return <WebViewPage
+                                    key={`page${index}`}
+                                    hideNav={true}
+                                    tabLabel={tab.name}
+                                    url={'https://m.weibo.cn/p/index?containerid=102803'}/>
+                        }
+
+                    })
+                }
 
             </ScrollTabView>
+
+        </View>
+    }
+
+
+    renderTab = () => {
+
+        return <View>
 
         </View>
     }

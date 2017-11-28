@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {ScrollTabView, WebViewPage,HomeScrollTabBar} from '../../components';
+import {ScrollTabView, WebViewPage, HomeScrollTabBar} from '../../components';
 import {Colors} from '../../themes';
 import DatingPage from './DatingPage';
+import ActivityPage from './ActivityPage';
 
 
 export default class MainTabList extends Component {
@@ -43,6 +44,10 @@ export default class MainTabList extends Component {
                                     hideNav={true}
                                     tabLabel={tab.name}
                                     url={'https://mp.weixin.qq.com/s/9N_JehE1pyy7hLzFoVolHw'}/>;
+                            case 2:
+                                return <ActivityPage
+                                    key={`page${index}`}
+                                    tabLabel={tab.name}/>;
                             default:
                                 return <WebViewPage
                                     key={`page${index}`}

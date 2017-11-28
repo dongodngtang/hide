@@ -72,23 +72,17 @@ export default class DatingPage extends Component {
                 </View>
 
                 <View style={[styles.alignRow, {marginTop: 8}]}>
+                    <Text style={styles.txtTag}>#徒步</Text>
+                    <Text style={styles.txtTag}>#山野</Text>
+
+                    <View style={{flex: 1}}/>
                     <Text style={styles.txtJoin}>报名中</Text>
-
-
                 </View>
 
 
             </View>
 
-            <View style={styles.tag}>
-                <Text style={styles.txtTag}>#徒步</Text>
-                <Text style={styles.txtTag}>#山野</Text>
-            </View>
 
-            <FastImage
-                source={{uri: 'http://c1.zdb.io/files/2017/11/14/6/6260053aa0b7e217eb78209e8f680771.jpg'}}
-                style={styles.avatar}>
-            </FastImage>
         </View>
 
     };
@@ -100,7 +94,7 @@ export default class DatingPage extends Component {
             if (page === 1) {
                 setTimeout(() => {
                     post([1, 2, 3, 4, 5, 6], 6)
-                }, 2000)
+                }, 1000)
 
             }
 
@@ -112,13 +106,13 @@ export default class DatingPage extends Component {
 
 const styles = StyleSheet.create({
     itemView: {
-        height: 140,
+        height: 130,
         width: '100%',
         backgroundColor: 'white',
         flexDirection: 'row',
         paddingLeft: 10,
         paddingRight: 10,
-        paddingTop: 8
+        alignItems: 'center'
     },
     imgAction: {
         height: 110,
@@ -145,15 +139,15 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         borderWidth: 1,
         borderColor: Colors._tag,
-        fontSize: 13,
+        fontSize: 10,
         color: Colors._tag,
         backgroundColor: Colors._F4E,
-        padding: 3
+        padding: 3,
     },
     avatar: {
-        height: 34,
-        width: 34,
-        borderRadius: 17,
+        height: 30,
+        width: 30,
+        borderRadius: 15,
         backgroundColor: Colors._ECE,
         position: 'absolute',
         bottom: 5,

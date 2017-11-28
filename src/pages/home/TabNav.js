@@ -4,6 +4,8 @@ import {Scene, Stack, Tabs} from 'react-native-router-flux';
 import MainPage from './MainPage';
 import {Icon} from '../../components';
 import {Colors} from '../../themes';
+import Sample from '../Sample';
+
 
 export class TabNav extends Component {
 
@@ -71,7 +73,7 @@ export const TagPage = () => {
         >
             <Scene
                 key="tab_news"
-                component={MainPage}
+                component={Sample}
                 title={'news'}
 
             />
@@ -81,7 +83,7 @@ export const TagPage = () => {
         >
             <Scene
                 key="tab_msg"
-                component={MainPage}
+                component={Sample}
                 title={'Messages'}
 
             />
@@ -91,7 +93,7 @@ export const TagPage = () => {
         >
             <Scene
                 key="tab_Me"
-                component={MainPage}
+                component={Sample}
                 title={'Me'}
 
             />

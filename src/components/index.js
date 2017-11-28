@@ -7,6 +7,7 @@ import Swiper from 'react-native-swiper';
 import NavTopBar from './NavTopBar';
 import WebViewPage from './WebViewPage';
 import HomeScrollTabBar from './HomeScrollTabBar';
+import CardMedia from './CardMedia';
 
 export {
     Container,
@@ -18,5 +19,6 @@ export {
     Swiper,
     NavTopBar,
     WebViewPage,
-    HomeScrollTabBar
+    HomeScrollTabBar,
+    CardMedia
 }

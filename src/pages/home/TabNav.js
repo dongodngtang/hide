@@ -15,7 +15,7 @@ export class TabNav extends Component {
             name: '首页',
             icon: 'home'
         }, {name: '发现', icon: 'bandcamp'},
-            {name: '消息', icon: 'commenting-o'},
+            {name: '关注', icon: 'commenting-o'},
             {name: '我的', icon: 'user-o'}];
 
         return (<View style={styles.tabView}>

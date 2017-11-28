@@ -85,7 +85,7 @@ export default class ActivityPage extends Component {
                         <Text style={styles.price}>¥99</Text>
                         <View style={{flex: 1}}/>
 
-                        <Text style={styles.txtJoin}>130已报名</Text>
+                        <Text style={styles.txtJoin}>130人已报名</Text>
                     </View>
 
                 </View>
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         borderWidth: 1,
         borderColor: Colors._tag,
-        fontSize: 12,
+        fontSize: 11,
         color: Colors._tag,
         backgroundColor: Colors._F4E,
         padding: 3

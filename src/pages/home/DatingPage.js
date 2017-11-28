@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         borderWidth: 1,
         borderColor: Colors._tag,
-        fontSize: 10,
+        fontSize: 11,
         color: Colors._tag,
         backgroundColor: Colors._F4E,
         padding: 3,

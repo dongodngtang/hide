@@ -6,6 +6,7 @@ import FastImage from 'react-native-fast-image';
 import Swiper from 'react-native-swiper';
 import NavTopBar from './NavTopBar';
 import WebViewPage from './WebViewPage';
+import HomeScrollTabBar from './HomeScrollTabBar';
 
 export {
     Container,
@@ -16,5 +17,6 @@ export {
     FastImage,
     Swiper,
     NavTopBar,
-    WebViewPage
+    WebViewPage,
+    HomeScrollTabBar
 }

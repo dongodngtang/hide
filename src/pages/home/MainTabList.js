@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {ScrollTabView, WebViewPage} from '../../components';
-import {ScrollableTabBar} from 'react-native-scrollable-tab-view';
+import {ScrollTabView, WebViewPage,HomeScrollTabBar} from '../../components';
 import {Colors} from '../../themes';
 import DatingPage from './DatingPage';
 
@@ -21,7 +20,7 @@ export default class MainTabList extends Component {
     render() {
         return <View style={{flex: 1}}>
             <ScrollTabView
-                renderTabBar={props => <ScrollableTabBar
+                renderTabBar={props => <HomeScrollTabBar
                     backgroundColor={Colors.white}
                     activeTextColor="#F34A4A"
                     inactiveTextColor={Colors._444}

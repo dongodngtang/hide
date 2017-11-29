@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Modal} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import NavBar, {NavButton, NavButtonText, NavTitle} from 'react-native-nav';
+import NavBar, {NavButton, NavButtonText, NavTitle} from './navbar';
 import PropTypes from 'prop-types';
 
 export default class NavTopBar extends Component {

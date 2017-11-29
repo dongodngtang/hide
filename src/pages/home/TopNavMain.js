@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Modal} from 'react-native';
 import {RkText, RkTextInput} from 'react-native-ui-kitten';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import NavBar, {NavButton, NavButtonText, NavTitle} from 'react-native-nav';
+import NavBar, {NavButton, NavButtonText, NavTitle} from '../../components/navbar';
 import cityData from '../../utils/1488442890071.json';
 import CityListView from '../../components/cityPicker/cityList';
 

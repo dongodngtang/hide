@@ -18,7 +18,7 @@ export default class NavTopBar extends Component {
                     flexDirection: 'row',
                     alignItems: 'center'
                 }}
-                onPress={this.props.leftPress || global.router.pop()}>
+                onPress={this.props.leftPress || this.pop}>
                 <Icon
                     name={'chevron-left'}
                     size={16}/>
@@ -30,6 +30,12 @@ export default class NavTopBar extends Component {
             <NavTitle>
                 {this.props.title || '标题'}
             </NavTitle>
+
         </NavBar>
+    }
+
+    pop = () => {
+        console.log('left')
+        global.router.pop()
     }
 }

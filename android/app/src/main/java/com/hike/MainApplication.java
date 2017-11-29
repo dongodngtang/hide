@@ -3,6 +3,8 @@ package com.hike;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
+import com.toast.RCTToastPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.dylanvann.fastimage.FastImageViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -26,6 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTCameraPackage(),
+            new RCTToastPackage(),
             new RNI18nPackage(),
             new FastImageViewPackage(),
             new VectorIconsPackage()

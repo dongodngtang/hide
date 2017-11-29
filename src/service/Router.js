@@ -3,7 +3,7 @@ import {Actions} from 'react-native-router-flux';
 
 export default class Router {
 
-    push(props, route) {
+    push(route) {
         Actions.push(route.name, {params: route.params})
 
     }
@@ -17,6 +17,10 @@ export default class Router {
         Actions.pop();
 
     }
+
+    toQRScannerPage() {
+        this.push({name: 'QRScannerPage'})
+    };
 
     toWebViewPage(url) {
         this.push({name: 'WebViewPage', params: {url: url}})

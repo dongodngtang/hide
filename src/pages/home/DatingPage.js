@@ -4,24 +4,53 @@ import {UltimateListView, FastImage, Icon} from '../../components';
 import {Colors} from '../../themes';
 import MainBanner from './MainBanner';
 import DatFilter from './DatFilter';
+import _ from 'lodash';
 
 export default class DatingPage extends Component {
 
+    state = {
+        showFilter: false
+    }
+
 
     render() {
-        return <UltimateListView
-            header={() => this.renderHeader()}
-            keyExtractor={(item, index) => `${index}list`}
-            displayDate
-            arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-            refreshableMode="advanced"
-            onFetch={this.onFetch}
-            separator={() => <View style={{
-                height: 1,
-                backgroundColor: Colors._ECE, width: '100%'
-            }}/>}
-            item={this.renderItem}
-        />
+        let that = this;
+        return <View>
+            <UltimateListView
+                header={() => this.renderHeader()}
+                keyExtractor={(item, index) => `${index}list`}
+                displayDate
+                arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
+                refreshableMode="advanced"
+                onFetch={this.onFetch}
+                separator={() => <View style={{
+                    height: 1,
+                    backgroundColor: Colors._ECE, width: '100%'
+                }}/>}
+                item={this.renderItem}
+                onViewableItemsChanged={(info) => {
+
+                    const {changed} = info;
+
+                    changed.forEach(item => {
+                        if (item.key === '0list') {
+                            console.log(item);
+
+                        }
+                    })
+                }
+                }
+            />
+            {this.state.showFilter ? <View style={styles.filterTop}>
+                <DatFilter/>
+            </View> : null}
+
+        </View>
+    }
+
+    showBar = (isViewable) => {
+        console.log('isViewable:' + isViewable)
+
     }
 
     renderHeader = () => {
@@ -158,6 +187,12 @@ const styles = StyleSheet.create({
         bottom: 3,
         left: 10,
         flexDirection: 'row'
+    },
+    filterTop: {
+        position: 'absolute',
+        top: 0,
+        height: 50,
+        width: '100%'
     }
 
 

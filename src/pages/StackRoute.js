@@ -3,6 +3,7 @@ import React from 'react';
 
 import {TagPage} from './home/TabNav';
 import WebViewPage from '../components/WebViewPage';
+import QRScannerPage from './home/QRScannerPage';
 
 export const Stacks = Actions.create(
     <Scene key="root">
@@ -12,4 +13,6 @@ export const Stacks = Actions.create(
         </Scene>
 
         <Scene key={'WebViewPage'} component={WebViewPage} hideNavBar/>
+
+        <Scene key={'QRScannerPage'} component={QRScannerPage} title={'扫一扫'}/>
     </Scene>);

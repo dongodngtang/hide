@@ -15,14 +15,17 @@ export default class QRScannerPage extends Component {
             cornerColor={Colors.yellow_FFD900}
             cornerOffsetSize={0}
             borderWidth={0}
-            hintText={'请对准车牌上的二维码'}
-            hintTextStyle={{color: Colors.yellow_FFD900, fontSize: 16, fontWeight: 'bold'}}
+            hintText={'将二维码/条码放入框内，即可自动扫描'}
+            hintTextStyle={{
+                color: Colors.yellow_FFD900, fontSize: 16, fontWeight: 'bold',
+                backgroundColor: 'transparent'
+            }}
             hintTextPosition={110}
             maskColor={Colors.black_0000004D}
             onScanResultReceived={this.barcodeReceived}
             bottomMenuHeight={120}
             renderTopBarView={() => {
-                return <View/>
+                return <NavTopBar title={'扫一扫'}/>
             }}
 
             renderBottomMenuView={() => this._renderMenu()}
@@ -36,7 +39,7 @@ export default class QRScannerPage extends Component {
 
                     <Text
                         style={Styles.text_menu_title}
-                    >手动输入车牌号</Text>
+                    >手动输入编号</Text>
                 </View>
 
                 <View style={Styles.view_menu_item_container}>

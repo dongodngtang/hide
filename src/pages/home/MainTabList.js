@@ -4,6 +4,7 @@ import {ScrollTabView, WebViewPage, HomeScrollTabBar} from '../../components';
 import {Colors} from '../../themes';
 import DatingPage from './DatingPage';
 import ActivityPage from './ActivityPage';
+import Blogposts from '../articles/Blogposts'
 
 
 export default class MainTabList extends Component {
@@ -48,6 +49,12 @@ export default class MainTabList extends Component {
                                 return <ActivityPage
                                     key={`page${index}`}
                                     tabLabel={tab.name}/>;
+
+                            case 3:
+                                return <Blogposts
+                                    key={`page${index}`}
+                                    tabLabel={tab.name}
+                                />;
                             default:
                                 return <WebViewPage
                                     key={`page${index}`}

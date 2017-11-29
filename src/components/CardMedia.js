@@ -48,10 +48,10 @@ export default class CardMedia extends Component {
         } = this.props;
 
         return (
-            <View style={[styles.cardMedia, style]}>
+            <View style={style}>
                 {files.length === 1 &&
                 <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
-                    <View style={[styles.cardMediaImages, style, {flexDirection: 'row'}]}>
+                    <View style={[style, {flexDirection: 'row'}]}>
                         <FastImage
                             source={{uri: `${files[0]}`}}
                             style={{flex: 1}}
@@ -61,7 +61,7 @@ export default class CardMedia extends Component {
                 }
                 {files.length === 2 &&
                 <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
-                    <View style={[styles.cardMediaImages, style, {flexDirection: 'row'}]}>
+                    <View style={[style, {flexDirection: 'row'}]}>
                         <FastImage
                             source={{uri: `${files[0]}`}}
                             style={{flex: 1}}
@@ -75,7 +75,7 @@ export default class CardMedia extends Component {
                 }
                 {files.length === 3 &&
                 <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
-                    <View style={[styles.cardMediaImages, style, {flexDirection: 'row'}]}>
+                    <View style={[style, {flexDirection: 'row'}]}>
                         <FastImage
                             source={{uri: `${files[0]}`}}
                             style={{flex: 2}}
@@ -95,7 +95,7 @@ export default class CardMedia extends Component {
                 }
                 {files.length >= 4 &&
                 <TouchableWithoutFeedback onPress={onPress} disabled={!imageTouchable}>
-                    <View style={[styles.cardMediaImages, style, {flexDirection: 'column'}]}>
+                    <View style={[style, {flexDirection: 'column'}]}>
                         <View style={[style, {flex: 1, flexDirection: 'row'}]}>
                             <FastImage
                                 source={{uri: `${files[0]}`}}
@@ -142,7 +142,7 @@ export default class CardMedia extends Component {
                         >
                             {title}
                         </Text>
-                        <View style={{flexDirection: 'row'}}>
+                        <View style={{flexDirection: 'row', alignItems: 'flex-end'}}>
                             {imageIconView && imageIconView()}
                             <Text
                                 style={[imageCountStyle, styles.imageCount]}
@@ -159,36 +159,16 @@ export default class CardMedia extends Component {
 }
 
 const styles = StyleSheet.create({
-    cardMedia: {
-        position: 'relative',
-    },
-    cardMediaImages: {
-        position: 'absolute',
-        left: -16,
-        right: -16,
-    },
+
     overlay: {
         position: 'absolute',
-        left: -16,
-        right: -16,
         bottom: 0,
         paddingTop: 24,
         paddingBottom: 16,
         paddingLeft: 16,
         paddingRight: 16,
         backgroundColor: 'rgba(0,0,0,.35)',
-    },
-    ovaerlayMoreImages: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0,0,0,.35)',
+        width: '100%'
     },
     imageCount: {
         top: 4,

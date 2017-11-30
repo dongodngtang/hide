@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {Swiper, FastImage} from '../../components';
+import { FastImage, Carousel} from '../../components';
+
 
 export default class MainBanner extends Component {
 
@@ -10,21 +11,25 @@ export default class MainBanner extends Component {
             {image: 'http://c1.zdb.io/files/recommend/2017/10/31/2/2075778187024f9b64dd3c4b499b8b7f.jpg'}];
         if (banners.length > 0)
             return (
-                <View style={{height: 200}}>
-                    <Swiper
-                        autoplayTimeout={3}
-                        autoplay>
-                        {banners.map((item, key) => {
-                            return <View
-                                key={`banner${key}`}>
-                                <FastImage style={{height: 200, width: '100%'}}
-                                           source={{uri: item.image}}/>
-                            </View>
+                <Carousel
+                    bullets
+                    style={{height: 200, width: '100%'}}
+                    autoplay>
+                    {banners.map((item, key) => {
+                        return <TouchableOpacity
+                            style={{flex: 1}}
+                            key={`banner${key}`}
+                            activeOpacity={1}>
+                            <FastImage
 
-                        })}
+                                style={{height: 200, width: '100%'}}
+                                source={{uri: item.image}}/>
+                        </TouchableOpacity>
 
-                    </Swiper>
-                </View>
+                    })}
+
+                </Carousel>
+
 
 
             );

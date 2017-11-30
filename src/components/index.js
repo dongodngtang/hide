@@ -8,6 +8,7 @@ import NavTopBar from './NavTopBar';
 import WebViewPage from './WebViewPage';
 import HomeScrollTabBar from './HomeScrollTabBar';
 import CardMedia from './CardMedia';
+import Carousel from './Carousel';
 
 export {
     Container,
@@ -20,5 +21,6 @@ export {
     NavTopBar,
     WebViewPage,
     HomeScrollTabBar,
-    CardMedia
+    CardMedia,
+    Carousel
 }

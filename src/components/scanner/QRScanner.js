@@ -43,7 +43,7 @@ class QRScannerRectView extends Component {
         scanBarMargin: 6,
         hintText: '将二维码/条码放入框内，即可自动扫描',
         hintTextStyle: {color: '#fff', fontSize: 14, backgroundColor: 'transparent'},
-        hintTextPosition: 130,
+        hintTextPosition: 100,
         isShowScanBar: true
     };
 

@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {
     FlatList,
     View,
-    TouchableOpacity,
+    Platform,
     Text,
     StyleSheet
 } from 'react-native';
@@ -103,7 +103,7 @@ export default class Blogposts extends Component {
             <UltimateListView
                 displayDate
                 arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-                refreshableMode="advanced"
+                refreshableMode={Platform.OS === 'ios' ? 'advanced' : 'basic'}
                 onFetch={this.onFetch}
                 item={this._renderItem}
                 keyExtractor={(item, index) => `blog${index}`}

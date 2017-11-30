@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Platform} from 'react-native';
 import {UltimateListView, FastImage, Icon} from '../../components';
 import {Colors} from '../../themes';
 
@@ -10,7 +10,7 @@ export default class ActivityPage extends Component {
             keyExtractor={(item, index) => `${index}activityList`}
             displayDate
             arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-            refreshableMode="advanced"
+            refreshableMode={Platform.OS === 'ios' ? 'advanced' : 'basic'}
             onFetch={this.onFetch}
             separator={() => <View style={{
                 height: 1,

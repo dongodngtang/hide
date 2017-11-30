@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Platform} from 'react-native';
 import {UltimateListView, FastImage, Icon} from '../../components';
 import {Colors} from '../../themes';
 import MainBanner from './MainBanner';
@@ -21,7 +21,7 @@ export default class DatingPage extends Component {
                 keyExtractor={(item, index) => `${index}list`}
                 displayDate
                 arrowImageStyle={{width: 20, height: 20, resizeMode: 'contain'}}
-                refreshableMode="advanced"
+                refreshableMode={Platform.OS === 'ios' ? 'advanced' : 'basic'}
                 onFetch={this.onFetch}
                 separator={() => <View style={{
                     height: 1,
@@ -35,6 +35,7 @@ export default class DatingPage extends Component {
                     changed.forEach(item => {
                         if (item.key === '0list') {
                             console.log(item);
+
 
                         }
                     })

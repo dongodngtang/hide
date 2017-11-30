@@ -23,6 +23,16 @@ let files = ['http://c1.zdb.io/files/recommend/2017/09/12/d/d06e4d89a2a77225f846
     'http://c1.zdb.io/files/2017/09/16/1/1601b4d2b86364dfa6cca35f3185b63a_b.jpg',
     'http://c1.zdb.io/files/2017/09/15/d/d565214c89631c5a94d6b06a3ea0114d_b.jpg'];
 
+let files1 = ['http://c1.zdb.io/files/recommend/2017/09/12/d/d06e4d89a2a77225f8460094f6d87b0b.jpg',
+    'http://c1.zdb.io/files/2017/09/16/1/1601b4d2b86364dfa6cca35f3185b63a_b.jpg',
+    'http://c1.zdb.io/files/2017/09/15/d/d565214c89631c5a94d6b06a3ea0114d_b.jpg'];
+
+let files2 = ['http://c1.zdb.io/files/recommend/2017/09/12/d/d06e4d89a2a77225f8460094f6d87b0b.jpg',
+    'http://c1.zdb.io/files/2017/09/15/d/d565214c89631c5a94d6b06a3ea0114d_b.jpg'];
+
+let files3 = [
+    'http://c1.zdb.io/files/2017/09/15/d/d565214c89631c5a94d6b06a3ea0114d_b.jpg'];
+
 export default class Blogposts extends Component {
 
 
@@ -36,6 +46,19 @@ export default class Blogposts extends Component {
         );
     }
 
+
+    _images = (info) => {
+
+        if (info === 1)
+            return files1;
+        else if (info === 2)
+            return files2;
+        else if (info === 3)
+            return files3;
+        else
+            return files
+    };
+
     _renderItem = (info) => {
         return (
             <View style={styles.item}
@@ -44,7 +67,7 @@ export default class Blogposts extends Component {
                     title={'[自驾】七天行走滇川藏'}
                     titleStyle={styles.title}
                     style={styles.card}
-                    files={files}
+                    files={this._images(info)}
                     imageIconView={this.renderImageIconView}
                     imageCountStyle={{
                         fontSize: 18, fontWeight: 'bold', color: '#fafafa',

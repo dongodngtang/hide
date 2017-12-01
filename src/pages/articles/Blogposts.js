@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         borderRadius: 3
     },
     card: {
-        height: 200
+        height: 160
     },
     title: {
         color: 'white',

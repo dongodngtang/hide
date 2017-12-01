@@ -4,7 +4,8 @@ import {ScrollTabView, WebViewPage, HomeScrollTabBar} from '../../components';
 import {Colors} from '../../themes';
 import DatingPage from './DatingPage';
 import ActivityPage from './ActivityPage';
-import Blogposts from '../articles/Blogposts'
+import Blogposts from '../articles/Blogposts';
+import BrandActivity from './BrandActivity';
 
 
 export default class MainTabList extends Component {
@@ -46,15 +47,22 @@ export default class MainTabList extends Component {
                                     tabLabel={tab.name}
                                     url={'https://mp.weixin.qq.com/s/9N_JehE1pyy7hLzFoVolHw'}/>;
                             case 2:
+                                return <BrandActivity
+                                    key={`page${index}`}
+                                    tabLabel={tab.name}/>;
+
+
+                            case 3:
                                 return <ActivityPage
                                     key={`page${index}`}
                                     tabLabel={tab.name}/>;
 
-                            case 3:
+                            case 4:
                                 return <Blogposts
                                     key={`page${index}`}
                                     tabLabel={tab.name}
                                 />;
+
                             default:
                                 return <WebViewPage
                                     key={`page${index}`}

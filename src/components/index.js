@@ -8,6 +8,7 @@ import WebViewPage from './WebViewPage';
 import HomeScrollTabBar from './HomeScrollTabBar';
 import CardMedia from './CardMedia';
 import Carousel from './Carousel';
+export * from './gradientButton';
 
 export {
     Container,

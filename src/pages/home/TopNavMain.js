@@ -81,7 +81,7 @@ export default class TopNavMain extends Component {
                          label={<Icon style={[styles.inputIcon, styles.searchIcon]} name='search'/>}
                          placeholder='Search' style={styles.searchColumn}/>
             <NavButton
-                onPress={() => global.router.toQRScannerPage()}>
+                onPress={() => global.router.toLogin()}>
                 <Icon
                     style={{marginLeft: 10}}
                     color={'green'}

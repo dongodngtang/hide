@@ -25,4 +25,9 @@ export default class Router {
     toWebViewPage(url) {
         this.push({name: 'WebViewPage', params: {url: url}})
     }
+
+    toLogin() {
+        this.push({name: 'Login'})
+    }
+
 }

@@ -5,6 +5,7 @@ import MainPage from './MainPage';
 import {Icon} from '../../components';
 import {Colors} from '../../themes';
 import Sample from '../Sample';
+import ListPage from '../ListPage';
 
 
 export class TabNav extends Component {
@@ -73,7 +74,7 @@ export const TagPage = () => {
         >
             <Scene
                 key="tab_news"
-                component={Sample}
+                component={ListPage}
                 title={'news'}
 
             />

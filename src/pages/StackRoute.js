@@ -7,6 +7,7 @@ import QRScannerPage from './home/QRScannerPage';
 import Login from './account/Login';
 
 const routes = [
+
     {key:'Login',component:Login},
     {key:'QRScannerPage',component:QRScannerPage},
     {key:'WebViewPage',component:WebViewPage},
